@@ -59,7 +59,7 @@ class Transaction:
         if account_number.startswith("Visa"):
             # Маскировка номера карты для карт Visa
             card_number_parts = account_number.split(' ')
-            return (f"{card_number_parts[0]} {card_number_parts[1][:4]} {card_number_parts[1][4:8]}"
+            return (f"{card_number_parts[0]} {card_number_parts[1][:8]}"
                     f" {card_number_parts[2][:4]} {card_number_parts[2][4:6]}** **** {card_number_parts[2][-4:]}")
         elif account_number.startswith("MasterCard") or account_number.startswith("Maestro") or account_number.startswith("МИР"):
             # Маскировка номера карты для карт Maestro, MasterCard, МИР
