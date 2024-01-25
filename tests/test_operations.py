@@ -6,7 +6,8 @@ from funcs.operations import Transaction
 def test_mask_account_number():
     assert Transaction.mask_account_number("Visa Platinum 1234567890123456") == "Visa Platinum 1234 56** **** 3456"
     assert Transaction.mask_account_number("MasterCard 9876543210987654") == "MasterCard 9876 54** **** 7654"
-
+    # добавил просто так
+    assert Transaction.mask_account_number("Tinkoff 9876543210987654") == "Tinkoff 9876543210987654"
 
 def test_parse_date():
     assert Transaction.parse_date("2022-01-30T12:30:45.678901") == "30.01.2022"
